@@ -21,4 +21,10 @@ void input()
             cout << "\n[!] Jumlah elemen tidak boleh lebih dari 10 . silahkan coba lagi.\n";
         }
     }
+
+    cout << "\n==============================\n";
+    cout << "\n      Masukan elemen array    \n";
+    cout << "\n==============================\n";
+
+    
 }
