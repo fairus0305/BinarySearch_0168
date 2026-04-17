@@ -26,5 +26,10 @@ void input()
     cout << "\n      Masukan elemen array    \n";
     cout << "\n==============================\n";
 
+    for (int i = 0; i < nPanjang; i++)
+    {
+        cout << "data ke -" << (i = 1) << " - ";
+        cin >> element[i];
+    }
     
 }
