@@ -64,3 +64,20 @@ void display()
     }
     cout << endl;
 }
+
+void binarySearch()
+{
+
+    char ulang;
+    do
+    {
+        cout << "\n===================================\n";
+        cout << "       pencarian binary search      \n";
+        cout << "====================================\n";
+
+        
+    } while ({
+        
+    });
+    
+}
