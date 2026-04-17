@@ -46,5 +46,13 @@ void bubbleSortArray()
             element[j + 1] = temp;
         }  
     } 
+}
+
+void display()
+{
+    cout << "\n===================================\n";
+    cout << "elemen array setelah diurutkan (Asc)\n";
+    cout << "====================================\n";
+
     
 }
