@@ -9,7 +9,7 @@ void input()
 {
     while (true)
     {
-        cout << "masukan banyaknya elemen pada array (maksimal 10) : ";
+        cout << "Masukkan banyaknya elemen pada array (maksimal10) : ";
         cin >> nPanjang;
 
         if (nPanjang <= 10)
@@ -18,20 +18,19 @@ void input()
         }
         else
         {
-            cout << "\n[!] Jumlah elemen tidak boleh lebih dari 10 . silahkan coba lagi.\n";
+            cout << "\n[!] Jumlah elemen tidak boleh lebih dari 10. Silahkan coba lagi.\n";
         }
     }
 
-    cout << "\n================================\n";
-    cout << "      Masukan elemen array      \n";
-    cout << "================================\n";
+    cout << "\n===========================================\n";
+    cout << "           Masukkan Elemen Array           \n";
+    cout << "===========================================\n";
 
     for (int i = 0; i < nPanjang; i++)
     {
-        cout << "data ke -" << (i = 1) << " - ";
+        cout << "Data ke-" << (i + 1) << " = ";
         cin >> element[i];
     }
-    
 }
 
 void bubbleSortArray()
@@ -41,20 +40,24 @@ void bubbleSortArray()
     {
         for (int j = 0; j <= nPanjang - 1 - pass; j++)
         {
-            int temp = element[j];
-            element[j] = element[j + 1];
-            element[j + 1] = temp;
+            if (element[j] > element[j + 1])
+            {
+                int temp = element[j];
+                element[j] = element[j + 1];
+                element[j + 1] = temp;
+            }
         }
+        pass++;
     } while (pass <= nPanjang - 1);
 }
 
 void display()
 {
-    cout << "\n===================================\n";
-    cout << "elemen array setelah diurutkan (Asc)\n";
-    cout << "====================================\n";
+    cout << "\n======================================\n";
+    cout << "   Elemen Array Setelah Diurutkan (Asc)\n";
+    cout << "======================================\n";
 
-    for (int j = 0; j <= nPanjang; j++)
+    for (int j = 0; j < nPanjang; j++)
     {
         cout << element[j];
         if (j < nPanjang - 1)
@@ -67,21 +70,19 @@ void display()
 
 void binarySearch()
 {
-
     char ulang;
     do
     {
-        cout << "\n===================================\n";
-        cout << "       pencarian binary search      \n";
-        cout << "====================================\n";
+        cout << "\n============================================\n";
+        cout << "           Pencarian Binary Search           \n";
+        cout << "============================================\n";
 
-        cout << "Masukan elemen yang ingin dicari : ";
+        cout << "Masukkan elemen yang ingin dicari : ";
         cin >> x;
 
         int low = 0;
         int high = nPanjang - 1;
-
-        do 
+        do
         {
             int mid = (low + high) / 2;
 
@@ -91,27 +92,26 @@ void binarySearch()
                 return;
             }
 
-            if (x > element[mid])
+            if (x < element[mid])
             {
-             high = mid - 1;
+                high = mid - 1;
             }
 
             if (x > element[mid])
             {
                 low = mid + 1;
             }
-
-            } while (low <= high);
+        } while (low <= high);
 
         if (low > high)
         {
-            cout << "\n[x] Elemen " << x << "tidak di temukan dalam array.\n";
+            cout << "\n[x] Elemen " << x << " tidak ditemukan dalam array.\n";
         }
 
-    cout << "\ningin mencari high lagi y/n: ";
-    cin >> ulang;
+        cout << "\nIngin mencari lagi? (y/n): ";
+        cin >> ulang;
 
-    }while (ulang == 'y' || ulang == 'Y');
+    } while (ulang == 'y' || ulang == 'Y');
 }
 
 int main()
